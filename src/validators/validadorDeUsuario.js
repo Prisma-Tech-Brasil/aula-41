@@ -16,6 +16,10 @@ const EsquemaDeUsuario = z.object({
     .string({ required_error: "A senha é obrigatória." })
     .trim()
     .min(8, { message: "A senha deve conter pelo menos 8 caracteres." }),
+  role: z.enum(["student", "teacher", "admin"], {
+    required_error: "O role é obrigatório.",
+    invalid_type_error: "O role deve ser 'student', 'teacher' ou 'admin'.",
+  }),
 });
 
 function validadorDeUsuario(dados) {
