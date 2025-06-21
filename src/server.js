@@ -1,7 +1,11 @@
+require("dotenv").config();
 const express = require("express");
 const rotas = require("./routes");
 const tratadorDeErros = require("./middleware/tratadorDeErros");
 const server = express();
+const cors = require("cors");
+
+server.use(cors());
 
 server.use(express.json());
 
@@ -13,4 +17,6 @@ server.use((_req, res, _next) =>
 
 server.use(tratadorDeErros);
 
-server.listen(4321, () => console.log("Servidor está rodando!"));
+server.listen(process.env.PORT, () =>
+  console.log(`Servidor rodando na porta ${process.env.PORT}`)
+);
