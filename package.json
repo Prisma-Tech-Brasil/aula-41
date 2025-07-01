@@ -1,0 +1,41 @@
+{
+  "name": "prisma-turmas",
+  "version": "1.0.0",
+  "description": "API RESTful criada como material didático para ensinar Node.js, Express, Prisma ORM, JWT e boas práticas de arquitetura de software (POO, camadas service/repository) para alunos de nível iniciante/intermediário em programação backend. O banco utilizado é SQLite, com Prisma como ORM.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/server.js",
+    "prisma:migrate": "npx prisma migrate dev",
+    "prisma:generate": "npx prisma generate",
+    "prisma:seed": "node prisma/seed.js",
+    "prisma:dev": "npm run prisma:migrate && npm run prisma:generate && npm run prisma:seed"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "prisma",
+    "sqlite",
+    "api",
+    "jwt",
+    "poo",
+    "didático",
+    "programação"
+  ],
+  "author": "Wallace Vieira",
+  "license": "MIT license",
+  "type": "commonjs",
+  "dependencies": {
+    "@prisma/client": "^6.10.1",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "nodemon": "^3.1.9",
+    "sqlite3": "^5.1.7",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "prisma": "^6.10.1"
+  }
+}
